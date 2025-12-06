@@ -68,7 +68,7 @@ function App() {
   return (
     <div className="font-body text-gray-900 bg-brand-yellow overflow-x-hidden">
       <section className="relative min-h-screen w-full overflow-hidden flex flex-col">
-        <div className="absolute inset-0 bg-[url('/bg-room.png')] md:bg-[url('/bg-room-v2.png')] bg-center bg-no-repeat z-0 bg-[length:auto_70%] md:bg-contain md:bg-[center_bottom]">
+        <div className="absolute inset-0 bg-[url('/bg-room.png')] lg:bg-[url('/bg-room-v2.png')] bg-center bg-no-repeat z-0 bg-[length:auto_70%] md:bg-contain md:bg-[center_bottom]">
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent h-32"></div>
         </div>
 
@@ -79,7 +79,7 @@ function App() {
             <TapeText
               rotate="-12deg"
               delay={0.5}
-              className="bg-blue-100 shadow-lg text-2xl border-4 border-black bottom-1/2"
+              className="bg-blue-100 shadow-lg text-2xl border-4 border-black bottom-[1/2]"
             >
               Maybe dog.
             </TapeText>
@@ -106,6 +106,9 @@ function App() {
               </div>
               <div className="bg-white border-2 border-black px-4 py-1 rotate-[2deg] font-marker shadow-[2px_2px_0px_black]">
                 Maybe cat.
+              </div>
+              <div className="bg-white border-2 border-black px-4 py-1 rotate-[2deg] font-marker shadow-[2px_2px_0px_black]">
+                Maybe trend.
               </div>
             </div>
           </div>
@@ -256,7 +259,6 @@ function App() {
                   title: "MINT",
                   val: "REVOKED",
                   color: "bg-brand-blue",
-                  text: "text-white",
                   rotate: "-rotate-2",
                 },
               ].map((item, i) => (
@@ -304,8 +306,8 @@ function App() {
             >
               <span className="opacity-50 select-none mr-2">CA:</span>
               7FAk...DUMMYx
-              <div className="absolute -top-3 -right-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rotate-12 border-2 border-black hidden group-hover:block">
-                COPY ME!
+              <div className="absolute -top-3 -right-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rotate-12 border-2 border-black block">
+                CLICK TO COPY!
               </div>
             </div>
           </motion.div>
@@ -317,7 +319,7 @@ function App() {
         className="relative bg-brand-yellow py-20 px-4"
       >
         <div className="container mx-auto max-w-4xl relative z-10">
-          <SectionTitle className="text-brand-purple">ROADMAP</SectionTitle>
+          <SectionTitle className="text-white">ROADMAP</SectionTitle>
 
           <div className="relative">
             <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-black/20 -translate-x-1/2 border-l-4 border-dotted border-black hidden md:block"></div>
