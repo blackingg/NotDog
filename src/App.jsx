@@ -65,6 +65,17 @@ const Phase = ({ title, items, delay, rotate }) => (
 );
 
 function App() {
+  const [isCopied, setIsCopied] = React.useState(false);
+  const ca = "7FAk2QmBn9sX3TtR4pLkDUMMYx82qNe5rwPzQjH1aG9";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(ca);
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   return (
     <div className="font-body text-gray-900 bg-brand-yellow overflow-x-hidden">
       <section className="relative min-h-screen w-full overflow-hidden flex flex-col">
@@ -297,17 +308,17 @@ function App() {
             className="mt-16 text-center max-w-2xl mx-auto"
           >
             <div
-              onClick={() =>
-                navigator.clipboard.writeText(
-                  "7FAk2QmBn9sX3TtR4pLkDUMMYx82qNe5rwPzQjH1aG9"
-                )
-              }
+              onClick={handleCopy}
               className="bg-white text-black font-mono text-xs md:text-xl p-4 md:p-6 rounded-xl border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] break-all relative group cursor-pointer active:scale-95 transition-transform"
             >
               <span className="opacity-50 select-none mr-2">CA:</span>
               7FAk...DUMMYx
-              <div className="absolute -top-3 -right-3 bg-brand-red text-white text-xs font-bold px-3 py-1 rotate-12 border-2 border-black block">
-                CLICK TO COPY!
+              <div
+                className={`absolute -top-3 -right-3 ${
+                  isCopied ? "bg-green-500" : "bg-brand-red"
+                } text-white text-xs font-bold px-3 py-1 rotate-12 border-2 border-black block transition-colors`}
+              >
+                {isCopied ? "COPIED!" : "CLICK TO COPY!"}
               </div>
             </div>
           </motion.div>
